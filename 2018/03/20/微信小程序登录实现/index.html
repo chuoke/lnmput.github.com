@@ -1,0 +1,634 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="微信小程序," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="嗯，对，你说得对。  调用wx.login1234567891011121314151617181920//app.jsApp(&amp;#123;  onLaunch: function() &amp;#123;    wx.login(&amp;#123;      success: function(res) &amp;#123;        if (res.code) &amp;#123;          //发起网络请求">
+<meta name="keywords" content="微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序登录实现">
+<meta property="og:url" content="http://yangguoqi.me/2018/03/20/微信小程序登录实现/index.html">
+<meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:description" content="嗯，对，你说得对。  调用wx.login1234567891011121314151617181920//app.jsApp(&amp;#123;  onLaunch: function() &amp;#123;    wx.login(&amp;#123;      success: function(res) &amp;#123;        if (res.code) &amp;#123;          //发起网络请求">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-20T02:30:47.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序登录实现">
+<meta name="twitter:description" content="嗯，对，你说得对。  调用wx.login1234567891011121314151617181920//app.jsApp(&amp;#123;  onLaunch: function() &amp;#123;    wx.login(&amp;#123;      success: function(res) &amp;#123;        if (res.code) &amp;#123;          //发起网络请求">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 微信小程序登录实现 | Hello, I'm Yang Zie. </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <a target="_blank" href="https://github.com/lnmput"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello, I'm Yang Zie.</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-read">
+          <a href="/read" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-translate">
+          <a href="/tags/translate" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br />
+            
+            翻译
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-project">
+          <a href="/project" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-thumbs-up"></i> <br />
+            
+            项目
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信小程序登录实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-20T10:14:46+08:00" content="2018-03-20">
+              2018-03-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><br>嗯，对，你说得对。<br></blockquote>
+
+<h3 id="调用wx-login"><a href="#调用wx-login" class="headerlink" title="调用wx.login"></a>调用wx.login</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//app.js</span></div><div class="line">App(&#123;</div><div class="line">  <span class="attr">onLaunch</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    wx.login(&#123;</div><div class="line">      <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (res.code) &#123;</div><div class="line">          <span class="comment">//发起网络请求</span></div><div class="line">          wx.request(&#123;</div><div class="line">            <span class="attr">url</span>: <span class="string">'https://test.com/onLogin'</span>,</div><div class="line">            <span class="attr">data</span>: &#123;</div><div class="line">              <span class="attr">code</span>: res.code</div><div class="line">            &#125;</div><div class="line">          &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'登录失败！'</span> + res.errMsg)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="onLogin接口-php实现"><a href="#onLogin接口-php实现" class="headerlink" title="onLogin接口,php实现"></a>onLogin接口,php实现</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$APPID = <span class="string">'wxf007410...'</span>;</div><div class="line">$SECRET = <span class="string">'1bb26d74f33910588ee....'</span>;</div><div class="line">$request = request();</div><div class="line">$code = $request-&gt;code;</div><div class="line">$url = <span class="string">'https://api.weixin.qq.com/sns/jscode2session?appid='</span>.$APPID.<span class="string">'&amp;secret='</span>.$SECRET.<span class="string">'&amp;js_code='</span>.$code.<span class="string">'&amp;grant_type=authorization_code'</span>;</div><div class="line">$client = <span class="keyword">new</span> \GuzzleHttp\Client();</div><div class="line">$response = $client-&gt;get($url)-&gt;getBody()-&gt;getContents();</div></pre></td></tr></table></figure>
+<p>返回数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="string">"session_key"</span>:<span class="string">"VUNQTngHJYeceYRrQpj0cQ=="</span>,<span class="string">"openid"</span>:<span class="string">"o3CTb4kuzH674QgeFsKhyoipfPi4"</span>&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="登录成功后调用获取用户接口"><a href="#登录成功后调用获取用户接口" class="headerlink" title="登录成功后调用获取用户接口"></a>登录成功后调用获取用户接口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">	  <span class="comment">// 登录成功</span></div><div class="line">	  <span class="built_in">console</span>.log(res.data)</div><div class="line">	  wx.getUserInfo(&#123;</div><div class="line">	    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">	      <span class="keyword">var</span> userInfo = res.userInfo</div><div class="line">	      <span class="keyword">var</span> nickName = userInfo.nickName</div><div class="line">	      <span class="keyword">var</span> avatarUrl = userInfo.avatarUrl</div><div class="line">	      <span class="keyword">var</span> gender = userInfo.gender <span class="comment">//性别 0：未知、1：男、2：女</span></div><div class="line">	      <span class="keyword">var</span> province = userInfo.province</div><div class="line">	      <span class="keyword">var</span> city = userInfo.city</div><div class="line">	      <span class="keyword">var</span> country = userInfo.country</div><div class="line"></div><div class="line">	      <span class="built_in">console</span>.log(<span class="string">'获取用户信息返回'</span>)</div><div class="line">	      <span class="built_in">console</span>.log(res);</div><div class="line">	    &#125;</div><div class="line">	  &#125;)</div></pre></td></tr></table></figure>
+<p>在登录状态下返回的信息包含敏感数据，将这些敏感数据提交到服务器进行解密<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'获取用户信息返回'</span>);</div><div class="line">	  <span class="built_in">console</span>.log(res);</div><div class="line">	  wx.request(&#123;</div><div class="line">	    <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">	    <span class="attr">url</span>: <span class="string">'https://vxndy.com/user'</span>, <span class="comment">//仅为示例，并非真实的接口地址</span></div><div class="line">	    data: &#123;</div><div class="line">	      <span class="attr">rawData</span>: res.rawData,</div><div class="line">	      <span class="attr">signature</span>: res.signature,</div><div class="line">	      <span class="attr">encryptedData</span> : res.encryptedData,</div><div class="line">	      <span class="attr">iv</span> : res.iv</div><div class="line">	    &#125;,</div><div class="line">	    <span class="attr">header</span>: &#123;</div><div class="line">	      <span class="string">'content-type'</span>: <span class="string">'application/json'</span> <span class="comment">// 默认值</span></div><div class="line">	    &#125;,</div><div class="line">	    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">	      <span class="built_in">console</span>.log(<span class="string">'调用解密接口返回'</span>)</div><div class="line">	      <span class="built_in">console</span>.log(res)</div><div class="line">	    &#125;</div><div class="line">	  &#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="user接口实现"><a href="#user接口实现" class="headerlink" title="user接口实现"></a>user接口实现</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">$APPID = <span class="string">'wxf0074104e....'</span>;</div><div class="line">$request = request();</div><div class="line">$rawData = $request-&gt;rawData;</div><div class="line">$signature = $request-&gt;signature;</div><div class="line">$encryptedData = $request-&gt;encryptedData;</div><div class="line">$iv = $request-&gt;iv;</div><div class="line"></div><div class="line"><span class="comment">//  解密数据</span></div><div class="line">$path = storage_path(<span class="string">'session_key'</span>);</div><div class="line">info(<span class="string">'从文件中获取session_key'</span>);</div><div class="line">$session_key = file_get_contents($path);</div><div class="line"></div><div class="line">$pc = <span class="keyword">new</span> \App\Wx\WXBizDataCrypt($APPID, $session_key);</div><div class="line">$errCode = $pc-&gt;decryptData($encryptedData, $iv, $data );</div><div class="line"><span class="keyword">if</span> ($errCode == <span class="number">0</span>) &#123;</div><div class="line">    <span class="keyword">return</span> response()-&gt;json($data);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    info(<span class="string">'错误'</span>);</div><div class="line">    info($errCode);</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> response()-&gt;json([<span class="string">'status'</span> =&gt; <span class="number">200</span>]);</div></pre></td></tr></table></figure>
+<p>返回的数据包括 openId 和 用户其他信息</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>每次发起登录请求的时候应该先检测是否需要登录<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">wx.checkSession(&#123;</div><div class="line">  success: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//session 未过期，并且在本生命周期一直有效</span></div><div class="line">  &#125;,</div><div class="line">  fail: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//登录态过期</span></div><div class="line">    wx.login() <span class="comment">//重新登录</span></div><div class="line">    ....</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信小程序/" rel="tag">#微信小程序</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/mysql的with-rollup的用法/" rel="next" title="mysql的with-rollup的用法">
+                <i class="fa fa-chevron-left"></i> mysql的with-rollup的用法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/20/面向切面编程AOP/" rel="prev" title="面向切面编程AOP">
+                面向切面编程AOP <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="lnmput@gmail.com" />
+          <p class="site-author-name" itemprop="name">lnmput@gmail.com</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">272</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lnmput" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.laruence.com/" title="风雪之隅" target="_blank">风雪之隅</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tech.youzan.com/" title="有赞技术团队" target="_blank">有赞技术团队</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://tech.meituan.com/archives" title="美团点评技术团队" target="_blank">美团点评技术团队</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://macshuo.com/" title="點燈坊" target="_blank">點燈坊</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.turn.tw/" title="轉個彎日誌" target="_blank">轉個彎日誌</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用wx-login"><span class="nav-number">1.</span> <span class="nav-text">调用wx.login</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#onLogin接口-php实现"><span class="nav-number">2.</span> <span class="nav-text">onLogin接口,php实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录成功后调用获取用户接口"><span class="nav-number">3.</span> <span class="nav-text">登录成功后调用获取用户接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user接口实现"><span class="nav-number">4.</span> <span class="nav-text">user接口实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">5.</span> <span class="nav-text">注意</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lnmput@gmail.com</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
