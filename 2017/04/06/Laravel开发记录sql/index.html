@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="啊 这瞌睡 这瞌睡像十除以三 函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($event">
+<meta name="description" content="啊 这瞌睡 这瞌睡像十除以三  函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($even">
 <meta name="keywords" content="Laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Laravel开发记录sql">
 <meta property="og:url" content="http://yangguoqi.me/2017/04/06/Laravel开发记录sql/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="啊 这瞌睡 这瞌睡像十除以三 函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($event">
+<meta property="og:description" content="啊 这瞌睡 这瞌睡像十除以三  函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($even">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T13:14:39.000Z">
+<meta property="og:updated_time" content="2018-04-25T01:36:34.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel开发记录sql">
-<meta name="twitter:description" content="啊 这瞌睡 这瞌睡像十除以三 函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($event">
+<meta name="twitter:description" content="啊 这瞌睡 这瞌睡像十除以三  函数1234567891011function trace_sql($dump = false)&amp;#123;    DB::listen(function ($event) use($dump) &amp;#123;        if ($dump) &amp;#123;            dump($event-&amp;gt;sql);            dump($even">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>啊 这瞌睡 这瞌睡像十除以三<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>啊 这瞌睡 这瞌睡像十除以三<br></blockquote>
+
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">trace_sql</span><span class="params">($dump = false)</span></span></div><div class="line">&#123;</div><div class="line">    DB::listen(<span class="function"><span class="keyword">function</span> <span class="params">($event)</span> <span class="title">use</span><span class="params">($dump)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ($dump) &#123;</div><div class="line">            dump($event-&gt;sql);</div><div class="line">            dump($event-&gt;bindings);</div><div class="line">        &#125;</div><div class="line">        Log::info($event-&gt;sql);</div><div class="line">        Log::info($event-&gt;bindings);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    trace_sql();</div><div class="line">    $query = Order::query();</div><div class="line">    <span class="comment">//$query-&gt;whereBetween('updated_at',[Carbon::today(), Carbon::tomorrow()]);</span></div><div class="line">    $query-&gt;whereHas(<span class="string">'incomeExpenditure'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($query)</span> </span>&#123;</div><div class="line">       $query-&gt;whereBetween(<span class="string">'created_at'</span>,[Carbon::today(), Carbon::tomorrow()])-&gt;where(<span class="string">'value'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>);</div><div class="line">    &#125;);</div><div class="line">    $orders = $query-&gt;where(<span class="string">'status'</span>, <span class="string">'paid'</span>)-&gt;with(<span class="string">'products'</span>)-&gt;orderBy(<span class="string">'updated_at'</span>, <span class="string">'desc'</span>)-&gt;paginate(<span class="number">1000</span>);</div><div class="line">    $datas = <span class="keyword">$this</span>-&gt;todayStatistics();</div><div class="line">    <span class="keyword">return</span> view(<span class="string">'home.index'</span>, [<span class="string">'orders'</span> =&gt; $orders, <span class="string">'datas'</span> =&gt; $datas]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
@@ -415,7 +416,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">272</span>
+              <span class="site-state-item-count">271</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -425,7 +426,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-count">118</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

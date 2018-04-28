@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="身不饥寒，天未曾负我；学无长进，我何以对天 安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文件">
+<meta name="description" content="身不饥寒，天未曾负我；学无长进，我何以对天  安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬虫第一周">
 <meta property="og:url" content="http://yangguoqi.me/2016/10/24/python爬虫第一周/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="身不饥寒，天未曾负我；学无长进，我何以对天 安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文件">
+<meta property="og:description" content="身不饥寒，天未曾负我；学无长进，我何以对天  安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T13:26:20.000Z">
+<meta property="og:updated_time" content="2018-04-25T01:34:38.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python爬虫第一周">
-<meta name="twitter:description" content="身不饥寒，天未曾负我；学无长进，我何以对天 安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文件">
+<meta name="twitter:description" content="身不饥寒，天未曾负我；学无长进，我何以对天  安装lxml123451. 首先安装pip install wheel2. 在这里下载对应的.whl文件，注意别改文件名！   http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml   cp后面是Python的版本号，27表示2.7，根据你的Python版本选择下载。3. pip install 带后缀的完整文">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>身不饥寒，天未曾负我；学无长进，我何以对天<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>身不饥寒，天未曾负我；学无长进，我何以对天<br></blockquote>
+
 <h3 id="安装lxml"><a href="#安装lxml" class="headerlink" title="安装lxml"></a>安装lxml</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 首先安装pip install wheel</div><div class="line"><span class="number">2.</span> 在这里下载对应的.whl文件，注意别改文件名！</div><div class="line">   http://www.lfd.uci.edu/~gohlke/pythonlibs/<span class="comment">#lxml</span></div><div class="line">   cp后面是Python的版本号，<span class="number">27</span>表示<span class="number">2.7</span>，根据你的Python版本选择下载。</div><div class="line"><span class="number">3.</span> pip install 带后缀的完整文件名</div></pre></td></tr></table></figure>
 <h3 id="例子-一"><a href="#例子-一" class="headerlink" title="例子(一)"></a>例子(一)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span>  urlopen</div><div class="line">resp = urlopen(<span class="string">'http://www.tooopen.com/img/87.aspx'</span>).read().decode(<span class="string">'utf-8'</span>)</div><div class="line">Soup = BeautifulSoup(resp,<span class="string">'lxml'</span>)</div><div class="line">images = Soup.select(<span class="string">'title'</span>)</div><div class="line"><span class="keyword">for</span> image <span class="keyword">in</span> images:</div><div class="line">    print(image.get_text())</div></pre></td></tr></table></figure>
 <h3 id="例子-二"><a href="#例子-二" class="headerlink" title="例子(二)"></a>例子(二)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span>  urlopen</div><div class="line">resp = urlopen(<span class="string">'http://www.tooopen.com/img/87.aspx'</span>).read().decode(<span class="string">'utf-8'</span>)</div><div class="line">Soup = BeautifulSoup(resp,<span class="string">'lxml'</span>)</div><div class="line">images = Soup.select(<span class="string">'img'</span>)</div><div class="line"><span class="keyword">for</span> image <span class="keyword">in</span> images:</div><div class="line">    print(image.get(<span class="string">'src'</span>))</div></pre></td></tr></table></figure>
@@ -423,7 +424,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">272</span>
+              <span class="site-state-item-count">271</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -433,7 +434,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-count">118</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

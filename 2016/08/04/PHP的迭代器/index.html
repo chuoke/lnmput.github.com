@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起…… 说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认属">
+<meta name="description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起……  说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认">
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP的迭代器">
 <meta property="og:url" content="http://yangguoqi.me/2016/08/04/PHP的迭代器/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起…… 说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认属">
+<meta property="og:description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起……  说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-08-04T13:05:04.000Z">
+<meta property="og:updated_time" content="2018-04-25T01:41:41.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP的迭代器">
-<meta name="twitter:description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起…… 说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认属">
+<meta name="twitter:description" content="最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起……  说明PHP5开始支持了接口， 并且内置了Iterator接口， 所以如果你定义了一个类，并实现了Iterator接口，那么你的这个类对象就是ZEND_ITER_OBJECT,否则就是ZEND_ITER_PLAIN_OBJECT.对于ZEND_ITER_PLAIN_OBJECT的类，foreach会通过HASH_OF获取该对象的默认">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起……<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>最孤独的，不是不能跟一个人在一起，而是根本不知道想跟谁在一起……<br></blockquote>
+
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>PHP5开始支持了接口， 并且内置了<code>Iterator</code>接口， 所以如果你定义了一个类，并实现了<code>Iterator</code>接口，<br>那么你的这个类对象就是<code>ZEND_ITER_OBJECT</code>,否则就是<code>ZEND_ITER_PLAIN_OBJECT</code>.<br>对于<code>ZEND_ITER_PLAIN_OBJEC</code>T的类，foreach会通过HASH_OF获取该对象的默认属性数组，然后对该数组进行foreach.<br>而对于<code>END_ITER_OBJECT</code>的类对象，则会通过调用对象实现的Iterator接口相关函数来进行foreach。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">* Iterator模式的简单实现类</div><div class="line">*/</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">sample</span> <span class="keyword">implements</span> <span class="title">Iterator</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> $_items ;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(&amp;$data)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;_items = $data;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">current</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> current(<span class="keyword">$this</span>-&gt;_items);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">next</span><span class="params">()</span> </span>&#123;</div><div class="line">        next(<span class="keyword">$this</span>-&gt;_items);   </div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">key</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> key(<span class="keyword">$this</span>-&gt;_items);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rewind</span><span class="params">()</span> </span>&#123;</div><div class="line">        reset(<span class="keyword">$this</span>-&gt;_items);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">valid</span><span class="params">()</span> </span>&#123;                                                                              </div><div class="line">        <span class="keyword">return</span> (<span class="keyword">$this</span>-&gt;current() !== <span class="keyword">FALSE</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="comment">/** DEMO */</span></div><div class="line">$data = <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</div><div class="line">$sa = <span class="keyword">new</span> sample($data);</div><div class="line"><span class="keyword">foreach</span> ($sa <span class="keyword">AS</span> $key =&gt; $row) &#123;</div><div class="line">    <span class="keyword">echo</span> $key, <span class="string">' '</span>, $row, <span class="string">'&lt;br /&gt;'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h3><ul>
@@ -352,8 +353,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/07/PHPCON-CHINA-2016简介/" rel="prev" title="PHPCON-CHINA-2016简介">
-                PHPCON-CHINA-2016简介 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/07/PHP生成器的简单理解/" rel="prev" title="PHP生成器的简单理解">
+                PHP生成器的简单理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -422,7 +423,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">272</span>
+              <span class="site-state-item-count">271</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -432,7 +433,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-count">118</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

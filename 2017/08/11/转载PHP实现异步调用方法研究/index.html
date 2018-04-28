@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="Yesterday you said tomorrow. 嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方式">
+<meta name="description" content="Yesterday you said tomorrow.  嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方">
 <meta name="keywords" content="PHP,异步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="转载PHP实现异步调用方法研究">
 <meta property="og:url" content="http://yangguoqi.me/2017/08/11/转载PHP实现异步调用方法研究/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="Yesterday you said tomorrow. 嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方式">
+<meta property="og:description" content="Yesterday you said tomorrow.  嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T13:14:21.000Z">
+<meta property="og:updated_time" content="2018-04-25T01:39:27.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转载PHP实现异步调用方法研究">
-<meta name="twitter:description" content="Yesterday you said tomorrow. 嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方式">
+<meta name="twitter:description" content="Yesterday you said tomorrow.  嵌入Ajax调用 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。这种方法最简单，也最快。服务器端不用做任何的调用。但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。而使用img标签的话，这种方">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>Yesterday you said tomorrow.<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>Yesterday you said tomorrow.<br></blockquote>
+
 <h3 id="嵌入Ajax调用"><a href="#嵌入Ajax调用" class="headerlink" title="嵌入Ajax调用"></a>嵌入Ajax调用</h3><p> 最简单的办法，就是在返回给客户端的HTML代码中，嵌入Ajax调用，或者，嵌入一个img标签，src指向要执行的耗时脚本。<br>这种方法最简单，也最快。服务器端不用做任何的调用。<br>但是缺点是，一般来说Ajax都应该在onLoad以后触发，也就是说，用户点开页面后，就关闭，那就不会触发我们的后台脚本了。<br>而使用img标签的话，这种方式不能称为严格意义上的异步执行。用户浏览器会长时间等待php脚本的执行完成，也就是用户浏览器的状态栏一直显示还在load。<br>当然，还可以使用其他的类似原理的方法，比如script标签等等。</p>
 <h3 id="popen"><a href="#popen" class="headerlink" title="popen()"></a>popen()</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">resource popen ( string command, string mode );</div><div class="line"><span class="comment">//打开一个指向进程的管道，该进程由派生给定的 command 命令执行而产生。打开一个指向进程的管道，该进程由派生给定的 command 命令执行而产生。</span></div></pre></td></tr></table></figure>
 <p>所以可以通过调用它，但忽略它的输出。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pclose(popen(<span class="string">"/home/xinchen/backend.php &amp;"</span>, <span class="string">'r'</span>));</div></pre></td></tr></table></figure></p>
@@ -424,7 +425,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">272</span>
+              <span class="site-state-item-count">271</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -434,7 +435,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">122</span>
+                <span class="site-state-item-count">118</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
