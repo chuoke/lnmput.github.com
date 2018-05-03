@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈… 使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#125">
+<meta name="description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈…  使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#12">
 <meta name="keywords" content="Laravel,PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php自动加载的深入理解">
 <meta property="og:url" content="http://yangguoqi.me/2017/08/15/php自动加载的深入理解/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈… 使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#125">
+<meta property="og:description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈…  使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#12">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T13:29:53.000Z">
+<meta property="og:updated_time" content="2018-05-02T02:35:52.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php自动加载的深入理解">
-<meta name="twitter:description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈… 使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#125">
+<meta name="twitter:description" content="那时候我总是能起的那么早,看到鸟儿在舞蹈…  使用require_once文件位于同级目录下class.php123456789101112&amp;lt;?phpclass Test&amp;#123;    public $name = &apos;yangzie&apos;;    public function getName()    &amp;#123;        return $this-&amp;gt;name;    &amp;#12">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>那时候我总是能起的那么早,看到鸟儿在舞蹈…<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>那时候我总是能起的那么早,看到鸟儿在舞蹈…<br></blockquote>
+
 <h3 id="使用require-once"><a href="#使用require-once" class="headerlink" title="使用require_once"></a>使用require_once</h3><p>文件位于同级目录下<br>class.php<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $name = <span class="string">'yangzie'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>index.php<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">require_once</span> <span class="string">'class.php'</span>;</div><div class="line"></div><div class="line">$test = <span class="keyword">new</span> Test();</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $test-&gt;getName();</div></pre></td></tr></table></figure></p>
 <h3 id="使用-autoload"><a href="#使用-autoload" class="headerlink" title="使用__autoload"></a>使用__autoload</h3><p>Test.php<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> $name = <span class="string">'yangzie'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -440,7 +441,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">271</span>
+              <span class="site-state-item-count">273</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -450,7 +451,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

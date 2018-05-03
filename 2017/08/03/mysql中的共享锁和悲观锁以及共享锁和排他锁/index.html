@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="这段情，曾夏了夏天，后来却也冬了冬天 悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，但">
+<meta name="description" content="这段情，曾夏了夏天，后来却也冬了冬天  悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql中的共享锁和悲观锁以及共享锁和排他锁">
 <meta property="og:url" content="http://yangguoqi.me/2017/08/03/mysql中的共享锁和悲观锁以及共享锁和排他锁/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="这段情，曾夏了夏天，后来却也冬了冬天 悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，但">
+<meta property="og:description" content="这段情，曾夏了夏天，后来却也冬了冬天  悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T13:47:31.000Z">
+<meta property="og:updated_time" content="2018-05-02T02:51:32.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql中的共享锁和悲观锁以及共享锁和排他锁">
-<meta name="twitter:description" content="这段情，曾夏了夏天，后来却也冬了冬天 悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，但">
+<meta name="twitter:description" content="这段情，曾夏了夏天，后来却也冬了冬天  悲观锁操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作比方12select * from table for update;  --就是表锁select * from table where x = 1 for update; --就是行锁 当使用for update后，其它会话还是可以执行select操作，">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>这段情，曾夏了夏天，后来却也冬了冬天<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>这段情，曾夏了夏天，后来却也冬了冬天<br></blockquote>
+
 <h3 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h3><p>操作前假设一切操作都可能发现并发冲突，所以采取悲观态度。通过加锁，屏蔽一切可能违反数据完整性的操作<br>比方<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">for</span> <span class="keyword">update</span>;  <span class="comment">--就是表锁</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> x = <span class="number">1</span> <span class="keyword">for</span> <span class="keyword">update</span>; <span class="comment">--就是行锁</span></div></pre></td></tr></table></figure></p>
 <p>当使用<code>for update</code>后，其它会话还是可以执行select操作，但无法执行<code>select xx for update</code>操作，只有当前会话<code>commit</code>后，其它for update操作才会被执行。</p>
 <p>for update仅适用于InnoDB，且必须在事务块(BEGIN/COMMIT)中才能生效<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">BEGIN</span>;</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span> <span class="keyword">FOR</span> <span class="keyword">UPDATE</span>;</div><div class="line">SLEEP(20);</div><div class="line"><span class="keyword">COMMIT</span>;</div></pre></td></tr></table></figure></p>
@@ -419,7 +420,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">271</span>
+              <span class="site-state-item-count">273</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -429,7 +430,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？ 简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_si">
+<meta name="description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？  简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_s">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql内存表的使用">
 <meta property="og:url" content="http://yangguoqi.me/2016/07/29/mysql内存表的使用/index.html">
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
-<meta property="og:description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？ 简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_si">
+<meta property="og:description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？  简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T12:56:30.000Z">
+<meta property="og:updated_time" content="2018-05-02T02:59:36.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql内存表的使用">
-<meta name="twitter:description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？ 简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_si">
+<meta name="twitter:description" content="答案很长，我准备用一生的时间来回答，你准备要听了吗？  简介1234567MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（临时表表结构及数据都在内存中）。内存表最大所需内存需要通过max_heap_table_size=1024M设定，临时表最大所需内存需要通过tmp_table_s">
 
 
 
@@ -304,7 +304,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>答案很长，我准备用一生的时间来回答，你准备要听了吗？<br></blockquote></p>
+        <blockquote class="blockquote-center"><br>答案很长，我准备用一生的时间来回答，你准备要听了吗？<br></blockquote>
+
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">MySQL的内存表，表结构创建在磁盘上，数据存放在内存中，所以当MySQL启动着的时候，</div><div class="line">这个表是存在的，数据也是存在的，当MySQL重启后，数据消失，表结构还存在（</div><div class="line">临时表表结构及数据都在内存中）。内存表最大所需内存需要通过</div><div class="line">max_heap_table_size=<span class="number">1024</span>M设定，临时表最大所需内存需要通过tmp_table_size = <span class="number">1024</span>M</div><div class="line">设定。当数据超过临时表的最大值设定时，自动转为基于磁盘的MyISAM表，</div><div class="line">存储在指定的tmpdir目录，此时因需要进行IO操作，性能会大大下降，</div><div class="line">而内存表不会，内存表满后，会提示数据满错误。</div></pre></td></tr></table></figure>
 <h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">内存表的表定义是存放在磁盘上的，扩展名为.frm， 重启不会丢失。</div><div class="line">内存表的数据是存放在内存中的，重启会丢失数据。</div><div class="line">MEMORY表使用一个固定的记录长度格式。</div><div class="line">mysql重启后，主键、自增、索引仍然存在，只是数据丢失。</div></pre></td></tr></table></figure>
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">内存表使用哈希散列索引把数据保存在内存中，因此具有极快的速度。</div></pre></td></tr></table></figure>
@@ -417,7 +418,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">271</span>
+              <span class="site-state-item-count">273</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -427,7 +428,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

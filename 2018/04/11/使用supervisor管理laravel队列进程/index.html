@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
 <meta property="og:description" content="你看了一千个正确答案，还是要一秒一秒的等时间  Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。 Supervisor的安装 使用 pip 工具进行安装： 1sudo pip inst">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-13T06:55:35.800Z">
+<meta property="og:updated_time" content="2018-05-02T09:33:33.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Supervisor管理Laravel队列进程">
 <meta name="twitter:description" content="你看了一千个正确答案，还是要一秒一秒的等时间  Supervisor 是一个 Python 写的进程管理工具，有时一个进程需要在后台运行，并且意外挂掉后能够自动重启，就需要这么一个管理进程的工具。在 Laravel 开发中，也经常使用到队列监听，可以配合 Supervisor 来管理 Laravel 队列进程。 Supervisor的安装 使用 pip 工具进行安装： 1sudo pip inst">
@@ -324,7 +324,8 @@
 <p>如果提示已经有进程在运行，那么先 kill 掉它。</p>
 <h3 id="使用Supervisor管理Laravel队列进程"><a href="#使用Supervisor管理Laravel队列进程" class="headerlink" title="使用Supervisor管理Laravel队列进程"></a>使用Supervisor管理Laravel队列进程</h3><p>我们使用 Laravel 队列，会用到 php artisan queue:work 命令，让它监听队列，我们可以通过 nohup 方式让它在后台运行，但是进程如果意外中断是不会自动重启的，所以使用 Supervisor 来监控进程是个很好的方式。</p>
 <p>首先在 /etc/supervisor 目录下新增一个 Supervisor 的配置文件，如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[program:laravel-worker]</div><div class="line">process_name=%(program_name)s_%(process_num)<span class="number">02</span>d</div><div class="line">command=php /usr/share/nginx/html/tanteng.me/artisan queue:work --tries=<span class="number">3</span></div><div class="line">autostart=<span class="keyword">true</span></div><div class="line">autorestart=<span class="keyword">true</span></div><div class="line">user=vagrant</div><div class="line">numprocs=<span class="number">8</span></div><div class="line">redirect_stderr=<span class="keyword">true</span></div><div class="line">stdout_logfile=/<span class="keyword">var</span>/log/supervisor/laravel-queue.log</div></pre></td></tr></table></figure></p>
-<p>这里 user 填写网站运行进程的用户，如 vagrant，numprocs 表示启动多少个进程来监听 Laravel 队列。<br>一切就绪后，我们使用如下命令就可以启动队列进程的监听了：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo supervisorctl reread</div><div class="line"></div><div class="line">sudo supervisorctl update</div><div class="line"></div><div class="line">sudo supervisorctl start laravel-worker:*</div></pre></td></tr></table></figure></p>
+<p>这里 user 填写网站运行进程的用户，如 vagrant，numprocs 表示启动多少个进程来监听 Laravel 队列。<br>一切就绪后，我们使用如下命令就可以启动队列进程的监听了：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo supervisorctl reread</div><div class="line"></div><div class="line">sudo supervisorctl update</div><div class="line"></div><div class="line">sudo supervisorctl start laravel-worker:*</div></pre></td></tr></table></figure>
 <p>但是在这一步，发生了错误，提示如下：</p>
 <blockquote>
 <p>laravel-worker:laravel-worker_00: ERROR (spawn error)<br>laravel-worker:laravel-worker_01: ERROR (spawn error)<br>laravel-worker:laravel-worker_02: ERROR (spawn error)<br>laravel-worker:laravel-worker_03: ERROR (spawn error)<br>laravel-worker:laravel-worker_04: ERROR (spawn error)<br>laravel-worker:laravel-worker_05: ERROR (spawn error)<br>laravel-worker:laravel-worker_06: ERROR (spawn error)<br>laravel-worker:laravel-worker_07: ERROR (spawn error)</p>
@@ -340,9 +341,11 @@
 <p>生产环境中，我们需要配置一个进程管理工具来监控 php artisan horizon 命令的执行，以便在其意外退出时自动重启。当服务器部署新代码时，需要终止当前 Horizon 主进程，然后通过进程管理工具来重启，从而使用最新的代码。</p>
 <p>使用 Artisan 命令 <code>horizon:terminate</code> 来正常停止系统中的 <code>Horizon</code> 主进程，此命令执行时，<code>Horizon</code> 当前执行中的任务会被正常完成，然后 Horizon 执行结束：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan horizon:terminate</div></pre></td></tr></table></figure></p>
 <p>Supervisor 配置<br>可以使用进程管理工具 Supervisor 来管理 horizon 进程，下面配置文件就已够用：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[program:horizon]</div><div class="line">process_name=%(program_name)</div><div class="line">command=php /home/forge/app.com/artisan horizon</div><div class="line">autostart=<span class="keyword">true</span></div><div class="line">autorestart=<span class="keyword">true</span></div><div class="line">user=forge</div><div class="line">redirect_stderr=<span class="keyword">true</span></div><div class="line">stdout_logfile=/home/forge/app.com/horizon.log</div></pre></td></tr></table></figure></p>
-<blockquote>
 <p>注意Horizon仅仅支持redis, 不支持database等其他队列引擎;</p>
-<p><a href="https://laravel-china.org/topics/3592/using-supervisor-to-manage-laravel-queue-processes" target="_blank" rel="noopener">https://laravel-china.org/topics/3592/using-supervisor-to-manage-laravel-queue-processes</a><br><a href="https://laravel-china.org/docs/laravel/5.5/horizon" target="_blank" rel="noopener">https://laravel-china.org/docs/laravel/5.5/horizon</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>配置说明:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">; 设置进程的名称，使用 supervisorctl 来管理进程时需要使用该进程名</div><div class="line">[program:foo] </div><div class="line">; 可以在 command 这里用 python 表达式传递不同的参数给每个进程</div><div class="line">command=python server.py --port=<span class="number">90</span>%(process_num)<span class="number">02</span>d</div><div class="line">directory=/home/python/tornado_server ; 执行 command 之前，先切换到工作目录</div><div class="line">; 若 numprocs 不为<span class="number">1</span>，process_name 的表达式中一定要包含 process_num 来区分不同的进程</div><div class="line">numprocs=<span class="number">2</span>                   </div><div class="line">process_name=%(program_name)s_%(process_num)<span class="number">02</span>d; </div><div class="line">user=oxygen                 ; 使用 oxygen 用户来启动该进程</div><div class="line">autorestart=<span class="keyword">true</span>            ; 程序崩溃时自动重启</div><div class="line">redirect_stderr=<span class="keyword">true</span>        ; 重定向输出的日志</div><div class="line">stdout_logfile = /<span class="keyword">var</span>/log/supervisor/tornado_server.log</div><div class="line">loglevel=info</div></pre></td></tr></table></figure></p>
+<p>上面这个例子会启动两个进程，process_name 分别为 foo:foo_01 和 foo:foo_02。通过这样一种方式，就可以用一个 [program:x] 配置项，来启动一组非常类似的进程。</p>
+<blockquote>
+<p><a href="https://laravel-china.org/topics/3592/using-supervisor-to-manage-laravel-queue-processes" target="_blank" rel="noopener">https://laravel-china.org/topics/3592/using-supervisor-to-manage-laravel-queue-processes</a><br><a href="https://laravel-china.org/docs/laravel/5.5/horizon" target="_blank" rel="noopener">https://laravel-china.org/docs/laravel/5.5/horizon</a><br><a href="https://www.restran.net/2015/10/04/supervisord-tutorial/" target="_blank" rel="noopener">https://www.restran.net/2015/10/04/supervisord-tutorial/</a></p>
 </blockquote>
 
       
@@ -452,7 +455,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">271</span>
+              <span class="site-state-item-count">273</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -462,7 +465,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -532,7 +535,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervisor的安装"><span class="nav-number">1.</span> <span class="nav-text">Supervisor的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervisor的配置"><span class="nav-number">2.</span> <span class="nav-text">Supervisor的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Supervisor管理Laravel队列进程"><span class="nav-number">3.</span> <span class="nav-text">使用Supervisor管理Laravel队列进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Horizon"><span class="nav-number">4.</span> <span class="nav-text">Horizon</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervisor的安装"><span class="nav-number">1.</span> <span class="nav-text">Supervisor的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Supervisor的配置"><span class="nav-number">2.</span> <span class="nav-text">Supervisor的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Supervisor管理Laravel队列进程"><span class="nav-number">3.</span> <span class="nav-text">使用Supervisor管理Laravel队列进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Horizon"><span class="nav-number">4.</span> <span class="nav-text">Horizon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
           </div>
         </section>
