@@ -4,6 +4,101 @@
 
     
   <url>
+    <loc>http://yangguoqi.me/2018/03/08/%E7%BB%9F%E4%B8%80%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86erp2/</loc>
+    <lastmod>2018-05-16T07:02:13.578Z</lastmod>
+    <data>
+        <display>
+        <title>统一订单管理erp2</title>
+        <pubTime>2018-03-08T03:27:04.000Z</pubTime>
+        
+        <tag>项目</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yangguoqi.me/2018/05/15/%E5%9C%A8php7-1%E4%B8%AD%E4%BD%BF%E7%94%A8openssl%E5%8F%96%E4%BB%A3mcrypt/</loc>
+    <lastmod>2018-05-16T06:55:36.175Z</lastmod>
+    <data>
+        <display>
+        <title>在PHP7.1中使用openssl取代mcrypt</title>
+        <pubTime>2018-05-15T08:43:55.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>加密</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yangguoqi.me/2017/10/19/larave%E7%9A%84aes%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-05-16T06:32:51.358Z</lastmod>
+    <data>
+        <display>
+        <title>larave的aes加密模式</title>
+        <pubTime>2017-10-19T04:11:23.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>AES</tag>
+         
+        <tag>加密</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yangguoqi.me/2017/09/28/Predis%E5%92%8CPhpredis%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2018-05-15T08:40:10.926Z</lastmod>
+    <data>
+        <display>
+        <title>Predis和Phpredis的区别</title>
+        <pubTime>2017-09-28T02:46:54.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+        <tag>PHP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yangguoqi.me/2018/03/02/PHP%E7%9A%84%E5%90%8E%E6%9C%9F%E9%9D%99%E6%80%81%E7%BB%91%E5%AE%9A/</loc>
+    <lastmod>2018-05-11T08:22:00.012Z</lastmod>
+    <data>
+        <display>
+        <title>PHP的后期静态绑定</title>
+        <pubTime>2018-03-02T06:39:02.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>PHP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yangguoqi.me/2018/05/08/swoole%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</loc>
     <lastmod>2018-05-08T02:14:08.183Z</lastmod>
     <data>
@@ -1185,23 +1280,6 @@
 
     
   <url>
-    <loc>http://yangguoqi.me/2018/03/08/%E7%BB%9F%E4%B8%80%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86erp2/</loc>
-    <lastmod>2018-04-08T05:44:36.637Z</lastmod>
-    <data>
-        <display>
-        <title>统一订单管理erp2</title>
-        <pubTime>2018-03-08T03:27:04.000Z</pubTime>
-        
-        <tag>项目</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yangguoqi.me/2018/04/08/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2018-04-08T03:10:30.948Z</lastmod>
     <data>
@@ -1895,9 +1973,9 @@
         <title>php和python中的正则表达式</title>
         <pubTime>2017-05-10T07:10:33.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Python</tag>
+         
+        <tag>PHP</tag>
          
         <tag>正则表达式</tag>
          
@@ -1950,25 +2028,6 @@
         <title>php的剩余参数</title>
         <pubTime>2018-01-23T10:27:51.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yangguoqi.me/2018/03/02/PHP%E7%9A%84%E5%90%8E%E6%9C%9F%E9%9D%99%E6%80%81%E7%BB%91%E5%AE%9A/</loc>
-    <lastmod>2018-03-27T13:30:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>PHP的后期静态绑定</title>
-        <pubTime>2018-03-02T06:39:02.000Z</pubTime>
-        
-        <tag>Laravel</tag>
-         
         <tag>PHP</tag>
          
          
@@ -2136,25 +2195,6 @@
 
     
   <url>
-    <loc>http://yangguoqi.me/2017/09/28/Predis%E5%92%8CPhpredis%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
-    <lastmod>2018-03-27T13:27:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>Predis和Phpredis的区别</title>
-        <pubTime>2017-09-28T02:46:54.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-        <tag>PHP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yangguoqi.me/2017/07/19/python%E4%B8%AD%E7%9A%84%E5%8D%8F%E7%A8%8B/</loc>
     <lastmod>2018-03-27T13:27:37.000Z</lastmod>
     <data>
@@ -2234,9 +2274,9 @@
         <title>python投票和ip地址的伪造</title>
         <pubTime>2016-12-09T02:30:46.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Python</tag>
+         
+        <tag>PHP</tag>
          
         <tag>IP</tag>
          
@@ -2644,27 +2684,6 @@
         <pubTime>2018-02-12T08:08:16.000Z</pubTime>
         
         <tag>Laravel</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yangguoqi.me/2017/10/19/larave%E7%9A%84aes%E5%8A%A0%E5%AF%86%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-03-27T13:19:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>larave的aes加密模式</title>
-        <pubTime>2017-10-19T04:11:23.000Z</pubTime>
-        
-        <tag>Laravel</tag>
-         
-        <tag>AES</tag>
-         
-        <tag>加密</tag>
          
          
            
@@ -3152,9 +3171,9 @@
         <title>centos升级python</title>
         <pubTime>2017-10-30T03:19:22.000Z</pubTime>
         
-        <tag>Centos</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Centos</tag>
          
          
            

@@ -84,13 +84,16 @@
 
 
 
+<meta name="description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:title" content="杨子鳄鱼的博客">
 <meta property="og:url" content="http://yangguoqi.me/page/55/index.html">
-<meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:site_name" content="杨子鳄鱼的博客">
+<meta property="og:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello, I&#39;m Yang Zie.">
+<meta name="twitter:title" content="杨子鳄鱼的博客">
+<meta name="twitter:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 
 
 
@@ -108,7 +111,7 @@
   };
 </script>
 
-  <title> Hello, I'm Yang Zie. </title>
+  <title> 杨子鳄鱼的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,11 +145,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hello, I'm Yang Zie.</span>
+      <span class="site-title">杨子鳄鱼的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -240,6 +243,101 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/26/mysql用户相关操作/" itemprop="url">
+                  mysql用户相关操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T22:45:49+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><blockquote class="blockquote-center"><br>那些最容易脸红的人，往往是最善良的。<br></blockquote></p>
+<h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">查看所有用户</div><div class="line">select host,user from user ;</div><div class="line">添加一个用户</div><div class="line">grant all on *.* to yangzie@<span class="string">"%"</span> identified by <span class="string">"123"</span> ; </div><div class="line">说明：</div><div class="line">all表示所有权限(包括增 删 改 查等权限)</div><div class="line">*.* 表示所有数据库，前面一个* 指的是库，后面指的是表</div><div class="line">yangzie为添加的用户名</div><div class="line"><span class="number">123</span>为密码，高版本的mysq会对密码的安全性做验证，简单的密码会导致命令执行失败</div><div class="line">%为匹配的所有主机，% 即可以使用其他连接工具像navicat远程连接</div><div class="line">删除一个用户</div><div class="line">delete from mysql.user where user =<span class="string">'yushan'</span> ;</div><div class="line"></div><div class="line">所有的这些操作完成以后，记得刷新权限</div><div class="line">flush privileges;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -709,105 +807,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/23/PHP是最好的语言/" itemprop="url">
-                  PHP是最好的语言
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-23T16:02:22+08:00" content="2016-07-23">
-              2016-07-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><blockquote class="blockquote-center"><br>    PHP是最好的语言<br>    呵呵<br></blockquote><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">echo</span> <span class="string">'PHP 是最好的语言'</span>;</div><div class="line"></div><div class="line"><span class="comment">//关于我</span></div><div class="line"></div><div class="line">define(<span class="string">'NAME'</span>,<span class="string">'杨国奇'</span>);</div><div class="line">define(<span class="string">'JOB'</span>,<span class="string">'PHPER'</span>);</div><div class="line">define(<span class="string">'LOCATION'</span>,<span class="string">'陕西西安'</span>);</div><div class="line">define(<span class="string">'WECHAT'</span>,<span class="string">'ygq1192'</span>);</div><div class="line">define(<span class="string">'EMAIL'</span>,<span class="string">'lnmput@gmail.com'</span>);</div><div class="line"></div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/54/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span>
+    <a class="extend prev" rel="prev" href="/page/54/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/56/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -843,12 +847,12 @@
                src="/images/avatar.png"
                alt="lnmput@gmail.com" />
           <p class="site-author-name" itemprop="name">lnmput@gmail.com</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">275</span>
+              <span class="site-state-item-count">276</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

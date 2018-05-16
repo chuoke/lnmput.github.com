@@ -84,13 +84,16 @@
 
 
 
+<meta name="description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:title" content="杨子鳄鱼的博客">
 <meta property="og:url" content="http://yangguoqi.me/page/23/index.html">
-<meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:site_name" content="杨子鳄鱼的博客">
+<meta property="og:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello, I&#39;m Yang Zie.">
+<meta name="twitter:title" content="杨子鳄鱼的博客">
+<meta name="twitter:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 
 
 
@@ -108,7 +111,7 @@
   };
 </script>
 
-  <title> Hello, I'm Yang Zie. </title>
+  <title> 杨子鳄鱼的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,11 +145,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hello, I'm Yang Zie.</span>
+      <span class="site-title">杨子鳄鱼的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -240,6 +243,122 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/28/强大的下拉框插件Select2/" itemprop="url">
+                  强大的下拉框插件Select2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-28T09:25:20+08:00" content="2017-09-28">
+              2017-09-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><blockquote class="blockquote-center"><br>每个人都是他人生的主角，<br>可是一旦沦为配角，就是他最伤心的时候。<br></blockquote><br>select2是一个可以给你定制支持搜索、标签、远程数据集，无限滚动，以及其他常用功能的一个下拉框美化插件。总之，功能很强大。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">$(<span class="string">'select'</span>).select2();</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">$(document).ready(function() &#123;</div><div class="line">$(".js-example-basic-single").select2();</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;select class="js-example-basic-single"&gt;</div><div class="line">&lt;option value="AL"&gt;Alabama&lt;/option&gt;</div><div class="line"> ...</div><div class="line">&lt;option value="WY"&gt;Wyoming&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
+<h3 id="多选框"><a href="#多选框" class="headerlink" title="多选框"></a>多选框</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">$(".js-example-basic-multiple").select2();</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;select class="js-example-basic-multiple" multiple="multiple"&gt;</div><div class="line">&lt;option value="AL"&gt;Alabama&lt;/option&gt;</div><div class="line">...</div><div class="line">&lt;option value="WY"&gt;Wyoming&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
+<h3 id="提示信息"><a href="#提示信息" class="headerlink" title="提示信息"></a>提示信息</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-example-placeholder-single"</span>).select2(&#123;</div><div class="line"><span class="attr">placeholder</span>: <span class="string">"Select a state"</span>,</div><div class="line"><span class="attr">allowClear</span>: <span class="literal">true</span> <span class="comment">//可以删除</span></div><div class="line">&#125;);</div><div class="line">$(<span class="string">".js-example-placeholder-multiple"</span>).select2(&#123;</div><div class="line"><span class="attr">placeholder</span>: <span class="string">"Select a state"</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="加载数组"><a href="#加载数组" class="headerlink" title="加载数组"></a>加载数组</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">var data = [</div><div class="line">&#123; id: 0, text: 'enhancement' &#125;,</div><div class="line">&#123; id: 1, text: 'bug' &#125;,</div><div class="line">&#123; id: 2, text: 'duplicate' &#125;,</div><div class="line">&#123; id: 3, text: 'invalid' &#125;,</div><div class="line">&#123; id: 4, text: 'wontfix' &#125;];</div><div class="line">$(".js-example-data-array").select2(&#123;</div><div class="line">data: data</div><div class="line">&#125;)</div><div class="line">$(".js-example-data-array-selected").select2(&#123;</div><div class="line">data: data</div><div class="line">&#125;)</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;select class="js-example-data-array"&gt;&lt;/select&gt;</div><div class="line">&lt;select class="js-example-data-array-selected"&gt;</div><div class="line">&lt;option value="2" selected="selected"&gt;duplicate&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
+<h3 id="加载远程数据"><a href="#加载远程数据" class="headerlink" title="加载远程数据"></a>加载远程数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-data-example-ajax"</span>).select2(&#123;</div><div class="line"><span class="attr">ajax</span>: &#123;</div><div class="line"> <span class="attr">url</span>: <span class="string">"https://api.github.com/search/repositories"</span>,</div><div class="line"> <span class="attr">dataType</span>: <span class="string">'json'</span>,</div><div class="line"> <span class="attr">delay</span>: <span class="number">250</span>,</div><div class="line"> <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</div><div class="line"> <span class="keyword">return</span> &#123;</div><div class="line"> <span class="attr">q</span>: params.term, <span class="comment">// search term</span></div><div class="line"> page: params.page</div><div class="line"> &#125;;</div><div class="line"> &#125;,</div><div class="line"> <span class="attr">processResults</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data, params</span>) </span>&#123;</div><div class="line"> <span class="comment">// parse the results into the format expected by Select2</span></div><div class="line"> <span class="comment">// since we are using custom formatting functions we do not need to</span></div><div class="line"> <span class="comment">// alter the remote JSON data, except to indicate that infinite</span></div><div class="line"> <span class="comment">// scrolling can be used</span></div><div class="line"> params.page = params.page || <span class="number">1</span>;</div><div class="line"> <span class="keyword">return</span> &#123;</div><div class="line"> <span class="attr">results</span>: data.items,</div><div class="line"> <span class="attr">pagination</span>: &#123;</div><div class="line"> <span class="attr">more</span>: (params.page * <span class="number">30</span>) &lt; data.total_count</div><div class="line"> &#125;</div><div class="line"> &#125;;</div><div class="line"> &#125;,</div><div class="line"> <span class="attr">cache</span>: <span class="literal">true</span></div><div class="line">&#125;,</div><div class="line"><span class="attr">escapeMarkup</span>: <span class="function"><span class="keyword">function</span> (<span class="params">markup</span>) </span>&#123; <span class="keyword">return</span> markup; &#125;, <span class="comment">// let our custom formatter work</span></div><div class="line">minimumInputLength: <span class="number">1</span>,</div><div class="line"><span class="attr">templateResult</span>: formatRepo, <span class="comment">// omitted for brevity, see the source of this page</span></div><div class="line">templateSelection: formatRepoSelection <span class="comment">// omitted for brevity, see the source of this page</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="禁用模式"><a href="#禁用模式" class="headerlink" title="禁用模式"></a>禁用模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-programmatic-enable"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> $(<span class="string">".js-example-disabled"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">false</span>);</div><div class="line"> $(<span class="string">".js-example-disabled-multi"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">false</span>);</div><div class="line">&#125;);</div><div class="line">$(<span class="string">".js-programmatic-disable"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> $(<span class="string">".js-example-disabled"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">true</span>);</div><div class="line"> $(<span class="string">".js-example-disabled-multi"</span>).prop(<span class="string">"disabled"</span>, <span class="literal">true</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="禁用结果"><a href="#禁用结果" class="headerlink" title="禁用结果"></a>禁用结果</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"js-example-disabled-results"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"one"</span>&gt;</span>First<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"two"</span> <span class="attr">disabled</span>=<span class="string">"disabled"</span>&gt;</span>Second (disabled)<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"three"</span>&gt;</span>Third<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="限制个数"><a href="#限制个数" class="headerlink" title="限制个数"></a>限制个数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-example-basic-multiple-limit"</span>).select2(&#123;</div><div class="line"> <span class="attr">maximumSelectionLength</span>: <span class="number">2</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="隐藏搜索框"><a href="#隐藏搜索框" class="headerlink" title="隐藏搜索框"></a>隐藏搜索框</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-example-basic-hide-search"</span>).select2(&#123;</div><div class="line"><span class="attr">minimumResultsForSearch</span>: <span class="literal">Infinity</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">change //选中或删除触发</div><div class="line">select2:open //下拉框打开触发</div><div class="line">select2:opening //下拉框打开之前</div><div class="line">select2:close //下拉框关闭</div><div class="line">select2:closing //下拉框关闭之前</div><div class="line">select2:select //选中结果触发</div><div class="line">select2:selecting //选中之前</div><div class="line">select2:unselect //结果未选中</div><div class="line">select2:unselecting //结果未选中之前</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $eventLog = $(<span class="string">".js-event-log"</span>);</div><div class="line"><span class="keyword">var</span> $eventSelect = $(<span class="string">".js-example-events"</span>);</div><div class="line">$eventSelect.on(<span class="string">"select2:open"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; log(<span class="string">"select2:open"</span>, e); &#125;);</div><div class="line">$eventSelect.on(<span class="string">"select2:close"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; log(<span class="string">"select2:close"</span>, e); &#125;);</div><div class="line">$eventSelect.on(<span class="string">"select2:select"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; log(<span class="string">"select2:select"</span>, e); &#125;);</div><div class="line">$eventSelect.on(<span class="string">"select2:unselect"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; log(<span class="string">"select2:unselect"</span>, e); &#125;);</div><div class="line">$eventSelect.on(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; log(<span class="string">"change"</span>); &#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span> (<span class="params">name, evt</span>) </span>&#123;</div><div class="line"><span class="keyword">if</span> (!evt) &#123;</div><div class="line"> <span class="keyword">var</span> args = <span class="string">"&#123;&#125;"</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"> <span class="keyword">var</span> args = <span class="built_in">JSON</span>.stringify(evt.params, <span class="function"><span class="keyword">function</span> (<span class="params">key, value</span>) </span>&#123;</div><div class="line"> <span class="keyword">if</span> (value &amp;&amp; value.nodeName) <span class="keyword">return</span> <span class="string">"[DOM node]"</span>;</div><div class="line"> <span class="keyword">if</span> (value <span class="keyword">instanceof</span> $.Event) <span class="keyword">return</span> <span class="string">"[$.Event]"</span>;</div><div class="line"> <span class="keyword">return</span> value;</div><div class="line"> &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> $e = $(<span class="string">"&lt;li&gt;"</span> + name + <span class="string">" -&gt; "</span> + args + <span class="string">"&lt;/li&gt;"</span>);</div><div class="line">$eventLog.append($e);</div><div class="line">$e.animate(&#123; <span class="attr">opacity</span>: <span class="number">1</span> &#125;, <span class="number">10000</span>, <span class="string">'linear'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> $e.animate(&#123; <span class="attr">opacity</span>: <span class="number">0</span> &#125;, <span class="number">2000</span>, <span class="string">'linear'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> $e.remove();</div><div class="line"> &#125;);</div><div class="line">&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="自定义控制"><a href="#自定义控制" class="headerlink" title="自定义控制"></a>自定义控制</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $example = $(<span class="string">".js-example-programmatic"</span>).select2();</div><div class="line"><span class="keyword">var</span> $exampleMulti = $(<span class="string">".js-example-programmatic-multi"</span>).select2();</div><div class="line">$(<span class="string">".js-programmatic-set-val"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $example.val(<span class="string">"CA"</span>).trigger(<span class="string">"change"</span>); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-open"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $example.select2(<span class="string">"open"</span>); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-close"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $example.select2(<span class="string">"close"</span>); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-init"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $example.select2(); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-destroy"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $example.select2(<span class="string">"destroy"</span>); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-multi-set-val"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $exampleMulti.val([<span class="string">"CA"</span>, <span class="string">"AL"</span>]).trigger(<span class="string">"change"</span>); &#125;);</div><div class="line">$(<span class="string">".js-programmatic-multi-clear"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; $exampleMulti.val(<span class="literal">null</span>).trigger(<span class="string">"change"</span>); &#125;);</div></pre></td></tr></table></figure>
+<h3 id="标签支持"><a href="#标签支持" class="headerlink" title="标签支持"></a>标签支持</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-example-tags"</span>).select2(&#123;</div><div class="line"> <span class="attr">tags</span>: <span class="literal">true</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="自动标记"><a href="#自动标记" class="headerlink" title="自动标记"></a>自动标记</h3><p>当我们输入值匹配成功后 键入空格就会自动标签化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".js-example-tokenizer"</span>).select2(&#123;</div><div class="line"> <span class="attr">tags</span>: <span class="literal">true</span>,</div><div class="line"> <span class="attr">tokenSeparators</span>: [<span class="string">','</span>, <span class="string">' '</span>]</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="自定义查找匹配"><a href="#自定义查找匹配" class="headerlink" title="自定义查找匹配"></a>自定义查找匹配</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchStart</span> (<span class="params">term, text</span>) </span>&#123;</div><div class="line"> <span class="keyword">if</span> (text.toUpperCase().indexOf(term.toUpperCase()) == <span class="number">0</span>) &#123;</div><div class="line"> <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line">$.fn.select2.amd.require([<span class="string">'select2/compat/matcher'</span>],</div><div class="line"> <span class="function"><span class="keyword">function</span> (<span class="params">oldMatcher</span>) </span>&#123;</div><div class="line"> $(<span class="string">".js-example-matcher-start"</span>).select2(&#123;</div><div class="line"> <span class="attr">matcher</span>: oldMatcher(matchStart)</div><div class="line"> &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>关于select2的CDN资源整理：<a href="http://www.bootcdn.cn/select2/" target="_blank" rel="noopener">http://www.bootcdn.cn/select2/</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://cdn.bootcss.com/select2/4.0.2/js/select2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"http://cdn.bootcss.com/select2/4.0.2/css/select2.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<p>示例:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"sel_menu2"</span> <span class="attr">multiple</span>=<span class="string">"multiple"</span> <span class="attr">name</span>=<span class="string">"tags"</span> <span class="attr">class</span>=<span class="string">"form-control"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">"选择标签"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>用户管理<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>角色管理<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>部门管理<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>菜单管理<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//多选</span></div><div class="line">    $(<span class="string">"#sel_menu2"</span>).select2(&#123;</div><div class="line">        <span class="attr">tags</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">maximumSelectionLength</span>: <span class="number">5</span>  <span class="comment">//最多能够选择的个数</span></div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><a href="https://www.bandari.net/blog/14" target="_blank" rel="noopener">https://www.bandari.net/blog/14</a><br><a href="https://stackoverflow.com/questions/14577014/select2-dropdown-but-allow-new-values-by-user" target="_blank" rel="noopener">https://stackoverflow.com/questions/14577014/select2-dropdown-but-allow-new-values-by-user</a><br><a href="https://my.oschina.net/corwien/blog/672858" target="_blank" rel="noopener">https://my.oschina.net/corwien/blog/672858</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -647,107 +766,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/20/javascript获取系统当前时间/" itemprop="url">
-                  javascript获取系统当前时间
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-09-20T17:33:00+08:00" content="2017-09-20">
-              2017-09-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote class="blockquote-center"><br>我对蝉说:他日再见,要待来年. 蝉对我说:他日重逢,要等来生<br></blockquote>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>当前系统时间<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>  /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    showTime();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">checkTime</span>(<span class="params">i</span>)</span>&#123;  <span class="comment">//补位处理</span></div><div class="line">    <span class="keyword">if</span>(i&lt;<span class="number">10</span>)  &#123;</div><div class="line">        i=<span class="string">'0'</span>+i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> now=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">var</span> year= now.getFullYear()  ;</div><div class="line">    <span class="keyword">var</span> month=  now.getMonth()+<span class="number">1</span> ;</div><div class="line">    <span class="keyword">var</span> day=  now.getDate()  ;</div><div class="line">    <span class="keyword">var</span> h=  now.getHours()  ;</div><div class="line">    <span class="keyword">var</span> m=  now.getMinutes()  ;</div><div class="line">    <span class="keyword">var</span> s=  now.getSeconds()  ;</div><div class="line">    m=checkTime(m)</div><div class="line">    s=checkTime(s)</div><div class="line"></div><div class="line">    <span class="keyword">var</span> weekday=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>)</div><div class="line">    weekday[<span class="number">0</span>]=<span class="string">"星期日"</span></div><div class="line">    weekday[<span class="number">1</span>]=<span class="string">"星期一"</span></div><div class="line">    weekday[<span class="number">2</span>]=<span class="string">"星期二"</span></div><div class="line">    weekday[<span class="number">3</span>]=<span class="string">"星期三"</span></div><div class="line">    weekday[<span class="number">4</span>]=<span class="string">"星期四"</span></div><div class="line">    weekday[<span class="number">5</span>]=<span class="string">"星期五"</span></div><div class="line">    weekday[<span class="number">6</span>]=<span class="string">"星期六"</span></div><div class="line"></div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"show"</span>).innerHTML=<span class="string">""</span>+year+<span class="string">"年"</span>+month+<span class="string">"月"</span>+day+<span class="string">"日 "</span>+  weekday[now.getDay()] +h+<span class="string">":"</span>+m+<span class="string">":"</span>+s;</div><div class="line">    t=setTimeout(<span class="string">'showTime()'</span>,<span class="number">500</span>)</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span>显示时间的位置<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -783,12 +806,12 @@
                src="/images/avatar.png"
                alt="lnmput@gmail.com" />
           <p class="site-author-name" itemprop="name">lnmput@gmail.com</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">275</span>
+              <span class="site-state-item-count">276</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -84,13 +84,16 @@
 
 
 
+<meta name="description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:title" content="杨子鳄鱼的博客">
 <meta property="og:url" content="http://yangguoqi.me/page/11/index.html">
-<meta property="og:site_name" content="Hello, I&#39;m Yang Zie.">
+<meta property="og:site_name" content="杨子鳄鱼的博客">
+<meta property="og:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello, I&#39;m Yang Zie.">
+<meta name="twitter:title" content="杨子鳄鱼的博客">
+<meta name="twitter:description" content="一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客">
 
 
 
@@ -108,7 +111,7 @@
   };
 </script>
 
-  <title> Hello, I'm Yang Zie. </title>
+  <title> 杨子鳄鱼的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,11 +145,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hello, I'm Yang Zie.</span>
+      <span class="site-title">杨子鳄鱼的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">世之奇伟、瑰怪、非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -240,6 +243,105 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/23/node开发环境报错error-code-ELIFECYCLE/" itemprop="url">
+                  node开发环境报错error-code-ELIFECYCLE
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-02-23T10:34:50+08:00" content="2018-02-23">
+              2018-02-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote class="blockquote-center"><br>别说东南西北，请说左右好么<br></blockquote>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>项目开发环境报了错，报错信息如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">npm ERR! code ELIFECYCLE</div><div class="line">npm ERR! errno <span class="number">2</span></div><div class="line">npm ERR! @ development: <span class="string">`cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js`</span></div><div class="line">npm ERR! Exit status <span class="number">2</span></div><div class="line">npm ERR!</div><div class="line">npm ERR! Failed at the @ development script.</div><div class="line">npm ERR! This is probably not a problem <span class="keyword">with</span> npm. There is likely additional logging output above.</div><div class="line"></div><div class="line">npm ERR! A complete log <span class="keyword">of</span> <span class="keyword">this</span> run can be found <span class="keyword">in</span>:</div><div class="line">npm ERR!     C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\<span class="number">2018</span><span class="number">-02</span><span class="number">-23</span>T02_05_24_275Z-debug.log</div><div class="line">npm ERR! code ELIFECYCLE</div><div class="line">npm ERR! errno <span class="number">2</span></div><div class="line">npm ERR! @ dev: <span class="string">`npm run development`</span></div><div class="line">npm ERR! Exit status <span class="number">2</span></div><div class="line">npm ERR!</div><div class="line">npm ERR! Failed at the @ dev script.</div><div class="line">npm ERR! This is probably not a problem <span class="keyword">with</span> npm. There is likely additional logging output above.</div><div class="line"></div><div class="line">npm ERR! A complete log <span class="keyword">of</span> <span class="keyword">this</span> run can be found <span class="keyword">in</span>:</div><div class="line">npm ERR!     C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\<span class="number">2018</span><span class="number">-02</span><span class="number">-23</span>T02_05_24_301Z-debug.log</div></pre></td></tr></table></figure></p>
+<h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><p>把 <code>node_modules</code> 目录删除<br>执行命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm cache clear --force  </div><div class="line">npm install -g npm</div></pre></td></tr></table></figure></p>
+<h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>查看 <code>node_modules</code> 目录的权限是否存在问题</p>
+<h3 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h3><p>检查是否有异常端口占用</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -687,115 +789,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/01/30/一道javascript面试题引发的思考/" itemprop="url">
-                  一道javascript面试题引发的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-01-30T11:39:19+08:00" content="2018-01-30">
-              2018-01-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote class="blockquote-center"><br>nothing is impossible<br></blockquote>
-
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在 JavaScript 中 (a ==1 &amp;&amp; a== 2 &amp;&amp; a==3) 可能为 true 吗？</p>
-<h3 id="解答一"><a href="#解答一" class="headerlink" title="解答一"></a>解答一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = &#123;</div><div class="line">  <span class="attr">i</span>: <span class="number">1</span>,</div><div class="line">  <span class="attr">toString</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.i++;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello World!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当使用 == 时，如果两个参数的类型不一样，那么 JS 会尝试将其中一个的类型转换为和另一个相同。在这里左边对象，右边数字的情况下，会首先尝试调用 valueOf（如果可以调用的话）来将对象转换为数字，如果失败，再调用 toString。</p>
-<h3 id="解答二"><a href="#解答二" class="headerlink" title="解答二"></a>解答二</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aﾠ = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> ﾠa = <span class="number">3</span>;</div><div class="line"><span class="keyword">if</span>(aﾠ==<span class="number">1</span> &amp;&amp; a== <span class="number">2</span> &amp;&amp;ﾠa==<span class="number">3</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Why hello there!"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="解答三"><a href="#解答三" class="headerlink" title="解答三"></a>解答三</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">with</span>(&#123;</div><div class="line">  get a() &#123;</div><div class="line">    <span class="keyword">return</span> ++i;</div><div class="line">  &#125;</div><div class="line">&#125;) &#123;</div><div class="line">  <span class="keyword">if</span> (a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"wohoo"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="解答四"><a href="#解答四" class="headerlink" title="解答四"></a>解答四</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">a.join = a.shift;</div><div class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a == <span class="number">3</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true" target="_blank" rel="noopener">https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -831,12 +829,12 @@
                src="/images/avatar.png"
                alt="lnmput@gmail.com" />
           <p class="site-author-name" itemprop="name">lnmput@gmail.com</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">一个记录PHP, Laravel, MySQL, Linux, Redis, ElasticSearch等web开发实践经验的博客</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">275</span>
+              <span class="site-state-item-count">276</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
